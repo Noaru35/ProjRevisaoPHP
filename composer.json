@@ -1,0 +1,10 @@
+{
+    "name": "admin/proj-revisao-php",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Admin\\ProjRevisaoPhp\\": "src/"
+        }
+    },
+    "require": {}
+}
