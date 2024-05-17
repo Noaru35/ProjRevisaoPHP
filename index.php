@@ -8,6 +8,6 @@
 <body>
     <h1>TODO LIST</h1>
     <?php
-        include_once 'src/main.php'    ?>
+        include 'src/main.php'    ?>
 </body>
 </html>
