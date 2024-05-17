@@ -8,7 +8,6 @@
 <body>
     <h1>TODO LIST</h1>
     <?php
-        echo "hello world";
-    ?>
+        include_once 'src/main.php'    ?>
 </body>
 </html>
