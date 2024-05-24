@@ -25,20 +25,23 @@
         };
 
         // Initialize Firebase
-        window.app = initializeApp(firebaseConfig);
-        window.fbAuth = getAuth(window.app);
+        window.fbApp = initializeApp(firebaseConfig);
+        window.fbAuth = getAuth(window.fbApp);
+        console.log(window.fbAuth)
 
-            createUserWithEmailAndPassword(window.fbAuth, "vinicius.s.bastos55@gmail.com", "123456789")
-            .then((userCredential) => {
-                //sign in
-                var user = userCredential.user;
-                console.log(user);
-            })
-            .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                console.log(errorMessage);
-            });
+        const btnRegister = document.getElementById('btnRegister');
+        btnRegister.addEventListener('click', async ()=> {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(window.fbAuth, email, password);
+                console.log(userCredential)
+            } catch (error) {
+                console.error(error);
+            }
+        })
+          
     </script>
 
 </head>
@@ -52,6 +55,6 @@
     <input type="email" id="email" name="email"><br>
     <label for="password">Password</label><br>
     <input type="password" id="password" name="password"><br>
-    <button id="btnLogin">Login</button><button id="btnRegUser">Registrar Usuario</button>
+    <button id="btnRegister">Registrar-se</button>
 </body>
 </html>
